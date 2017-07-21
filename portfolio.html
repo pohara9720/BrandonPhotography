@@ -28,11 +28,12 @@ nav {
 #logo {
     width: 350px;
     height: 350px;
-    margin-top: -55px;
-    margin-left: -45px;
+    margin-top: -45px;
+    margin-left: -90px;
 }
 
 #dropdown1 {
+    margin-left: -50px !important;
     margin-top: 200px !important;
     background-color: black;
     width: 19% !important;
@@ -49,24 +50,65 @@ nav {
     width: 25px;
 }
 
-#social {
-    margin-top: 100px;
+#about {
+    color: #D2B48C;
 }
 
 a {
     background-color: black !important;
 }
-#modal1,.modal-footer{
-background-color:  #D2B48C !important;
-text-align: center;
-    font-family: 'Comfortaa', cursive;
 
+h1 {
+    text-align: center;
+    font-family: 'Playfair Display SC', serif;
+    color: #D2B48C;
+    margin-top: 0px!important;
+    margin-left: -180px !important;
 }
-label{
-    color:black!important;
+
+h2 {
+    font-size: 35px !important;
+    font-weight: bolder;
 }
-#submit{
-    color:  #D2B48C;
+
+
+
+.right {
+    float: right;
+    height: 400px;
+    width: 350px;
+    border-radius: 50%;
+    margin-bottom: 50px;
+}
+
+
+.container {
+    width: 90% !important;
+    float: right;
+    margin-right: 80px !important;
+    font-size: 20px;
+    font-family: 'Comfortaa', cursive;
+    line-height: 25px;
+    margin-top: 50px !important;
+}
+
+#modal1,
+.modal-footer {
+    background-color: #D2B48C !important;
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+}
+
+label {
+    color: black!important;
+}
+
+#submit {
+    color: #D2B48C;
+}
+.port{
+    width: 200px;
+    height: 200px;
 }
 </style>
 <!DOCTYPE html>
@@ -76,8 +118,7 @@ label{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Comfortaa|Playfair+Display+SC|Questrial" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Playfair+Display+SC|Questrial" rel="stylesheet">
     <script src="https://code.jquery.com/jquery.js"></script>
     <meta charset="UTF-8">
     <title>Cheyna Carr</title>
@@ -85,7 +126,7 @@ label{
 <!-- Dropdown Structure -->
 
 <body>
- <div id="modal1" class="modal modal-fixed-footer">
+    <div id="modal1" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Contact me!</h4>
             <div class="row">
@@ -112,7 +153,8 @@ label{
             </div>
         </div>
         <div class="modal-footer">
-            <center><a id="submit" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Submit</a><center>
+            <center><a id="submit" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Submit</a>
+                <center>
         </div>
     </div>
     <ul id="dropdown1" class="dropdown-content">
@@ -130,12 +172,37 @@ label{
         </li>
         </li>
     </ul>
-    <nav>
-        <div class="nav-wrapper">
+    <div id="slide" class="row">
+        <div class="col s12 m12 l2">
             <a href="#!" class="dropdown-button brand-logo" data-activates="dropdown1"><img id="logo" src="images/cheynalogo.png"></a>
         </div>
-    </nav>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+        <div id="about" class="col s12 m10 l10">
+        <h1>Portfolio</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col l4"><img class="port materialboxed" src="images/cc1.jpg"></div>
+                    <div class="col l4"><img class="port materialboxed" src="images/cc2.jpg"></div>
+                    <div class="col l4"><img class="port materialboxed" src="images/cc3.jpg"></div>
+                </div>
+                <div class="row">
+                    <div class="col l4"><img class="port materialboxed" src="images/cc10.jpg"></div>
+                    <div class="col l4"><img class="port materialboxed" src="images/cc11.jpg"></div>
+                    <div class="col l4"><img class="port materialboxed" src="images/cc4.jpg"></div>
+                </div>
+                <div class="row">
+                    <div class="col l4"><img class="port materialboxed" src="images/cc1.jpg"></div>
+                    <div class="col l4"><img class="port materialboxed" src="images/cc5.jpg"></div>
+                    <div class="col l4"><img class="port materialboxed" src="images/cc6.jpg"></div>
+                </div>
+                <div class="row">
+                    <div class="col l4"><img class="port materialboxed" src="images/cc7.jpg"></div>
+                    <div class="col l4"><img class="port materialboxed" src="images/cc8.jpg"></div>
+                    <div class="col l4"><img class="port materialboxed" src="images/cc9.jpg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
@@ -143,6 +210,7 @@ label{
 
         $(".dropdown-button").dropdown();
         $('.modal').modal();
+         $('.materialboxed').materialbox();
 
         // Initialize Firebase
         // Initialize Firebase
@@ -158,13 +226,13 @@ label{
         var database = firebase.database();
 
 
-       
+
 
         $("#submit").on("click", function() {
             event.preventDefault();
-             var name = $("#name").val().trim();
-        var number = $("#number").val().trim();
-        var message = $("#textarea1").val().trim();
+            var name = $("#name").val().trim();
+            var number = $("#number").val().trim();
+            var message = $("#textarea1").val().trim();
             database.ref().push({
                 Name: name,
                 Email: number,
