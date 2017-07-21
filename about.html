@@ -28,11 +28,12 @@ nav {
 #logo {
     width: 350px;
     height: 350px;
-    margin-top: -55px;
-    margin-left: -45px;
+    margin-top: -45px;
+    margin-left: -90px;
 }
 
 #dropdown1 {
+    margin-left: -50px !important;
     margin-top: 200px !important;
     background-color: black;
     width: 19% !important;
@@ -61,7 +62,7 @@ h1 {
     text-align: center;
     font-family: 'Playfair Display SC', serif;
     color: #D2B48C;
-    margin-top: -50px!important;
+    margin-top: 0px!important;
 }
 
 h2 {
@@ -70,34 +71,37 @@ h2 {
 }
 
 
-.right{
-float: right;
-height: 400px;
-width: 350px;
-border-radius: 50%;
-margin-bottom: 50px;
+.right {
+    float: right;
+    height: 400px;
+    width: 350px;
+    border-radius: 50%;
+    margin-bottom: 50px;
 }
 
 
 .container {
-    width: 60%;
+    width: 90% !important;
     float: right;
     margin-right: 80px !important;
     font-size: 20px;
     font-family: 'Comfortaa', cursive;
     line-height: 25px;
 }
-#modal1,.modal-footer{
-background-color:  #D2B48C !important;
-text-align: center;
-    font-family: 'Comfortaa', cursive;
 
+#modal1,
+.modal-footer {
+    background-color: #D2B48C !important;
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
 }
-label{
-    color:black!important;
+
+label {
+    color: black!important;
 }
-#submit{
-    color:  #D2B48C;
+
+#submit {
+    color: #D2B48C;
 }
 </style>
 <!DOCTYPE html>
@@ -115,7 +119,7 @@ label{
 <!-- Dropdown Structure -->
 
 <body>
- <div id="modal1" class="modal modal-fixed-footer">
+    <div id="modal1" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Contact me!</h4>
             <div class="row">
@@ -142,7 +146,8 @@ label{
             </div>
         </div>
         <div class="modal-footer">
-            <center><a id="submit" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Submit</a><center>
+            <center><a id="submit" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Submit</a>
+                <center>
         </div>
     </div>
     <ul id="dropdown1" class="dropdown-content">
@@ -160,37 +165,31 @@ label{
         </li>
         </li>
     </ul>
-    <nav>
-        <div class="nav-wrapper">
+    <div id="slide" class="row">
+        <div class="col s12 m12 l2">
             <a href="#!" class="dropdown-button brand-logo" data-activates="dropdown1"><img id="logo" src="images/cheynalogo.png"></a>
         </div>
-    </nav>
-    <div class="col s12 m2 l2"></div>
-    <div id="about" class="col s12 m10 l10">
-        <h1>Cheyna Carr</h1>
-        <div class="container">
-            <p>
-                <h2>Hello!</h2>
-                
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus tempora optio, dicta, harum cum deserunt?Quod nisi qui in quia iure non sapiente esse aut, labore impedit! A eius, nesciunt.
-                <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti ipsum reprehenderit excepturi repellendus minus at est corporis dolor nisi, molestiae magnam suscipit quos atque animi consectetur porro! Similique, tenetur, repellat?
-                <br><img class="right" src="images/cc1.jpg">
-                
-                <h2>My Gear</h2>
-                <ul>
-                    <li>-Camera</li>
-                    <li>-Lens</li>
-                    <li>-Strap</li>
-                    <li>-Another lens</li>
-                    <li>-Camera 2</li>
-                    <li>-Pictures</li>
-                </ul>
-                <h2>Another Heading</h2>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam doloremque dolore tempora fuga temporeullam in atque repellendus illum consectetur culpa voluptatum nostrum quo, modi qui placeat esse aspernatur accusamus.</p>
+        <div id="about" class="col s12 m10 l10">
+            <h1>Cheyna Carr</h1>
+            <div class="container">
+                <p>
+                    <h2>Hello!</h2> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus tempora optio, dicta, harum cum deserunt?Quod nisi qui in quia iure non sapiente esse aut, labore impedit! A eius, nesciunt.
+                    <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti ipsum reprehenderit excepturi repellendus minus at est corporis dolor nisi, molestiae magnam suscipit quos atque animi consectetur porro! Similique, tenetur, repellat?
+                    <br><img class="right" src="images/cc1.jpg">
+                    <h2>My Gear</h2>
+                    <ul>
+                        <li>-Camera</li>
+                        <li>-Lens</li>
+                        <li>-Strap</li>
+                        <li>-Another lens</li>
+                        <li>-Camera 2</li>
+                        <li>-Pictures</li>
+                    </ul>
+                    <h2>Another Heading</h2> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam doloremque dolore tempora fuga temporeullam in atque repellendus illum consectetur culpa voluptatum nostrum quo, modi qui placeat esse aspernatur accusamus.</p>
+            </div>
         </div>
     </div>
-    </div>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
@@ -213,13 +212,13 @@ label{
         var database = firebase.database();
 
 
-       
+
 
         $("#submit").on("click", function() {
             event.preventDefault();
-             var name = $("#name").val().trim();
-        var number = $("#number").val().trim();
-        var message = $("#textarea1").val().trim();
+            var name = $("#name").val().trim();
+            var number = $("#number").val().trim();
+            var message = $("#textarea1").val().trim();
             database.ref().push({
                 Name: name,
                 Email: number,

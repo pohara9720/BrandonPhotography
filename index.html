@@ -11,7 +11,7 @@ body {
 .slider {
     height: 100vh !important;
     float: left !important;
-    margin-top: -65px !important;
+    margin-top: 0px !important;
 }
 
 .container {
@@ -29,16 +29,19 @@ nav {
 #logo {
     width: 350px;
     height: 350px;
-    margin-top: -55px;
-    margin-left: -45px;
+    margin-top: -45px;
+    margin-left: -90px;
 }
 
 #dropdown1 {
+    margin-left: -50px !important;
     margin-top: 200px !important;
     background-color: black;
     width: 19% !important;
 }
-
+/*ul#dropdown1.dropdowncontent.active{
+    margin-top: 100px !important;
+}*/
 .dropdown-content li>a,
 .dropdown-content li>span {
     text-align: right !important;
@@ -67,17 +70,20 @@ h5 {
     font-size: 150% !important;
     font-family: 'Questrial', sans-serif;
 }
-#modal1,.modal-footer{
-background-color:  #D2B48C !important;
-text-align: center;
-    font-family: 'Comfortaa', cursive;
 
+#modal1,
+.modal-footer {
+    background-color: #D2B48C !important;
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
 }
-label{
-    color:black!important;
+
+label {
+    color: black!important;
 }
-#submit{
-    color:  #D2B48C;
+
+#submit {
+    color: #D2B48C;
 }
 </style>
 <!DOCTYPE html>
@@ -123,7 +129,8 @@ label{
             </div>
         </div>
         <div class="modal-footer">
-            <center><a id="submit" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Submit</a><center>
+            <center><a id="submit" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Submit</a>
+                <center>
         </div>
     </div>
     <ul id="dropdown1" class="dropdown-content">
@@ -141,16 +148,16 @@ label{
         </li>
         </li>
     </ul>
-    <nav>
-        <div class="nav-wrapper">
+    <!--  <nav>
+                <div class="nav-wrapper">
+                    <a href="#!" class="dropdown-button brand-logo" data-activates="dropdown1"><img id="logo" src="images/cheynalogo.png"></a>
+            </nav> -->
+    <div id="slide" class="row">
+        <div class="col s12 m12 l2">
             <a href="#!" class="dropdown-button brand-logo" data-activates="dropdown1"><img id="logo" src="images/cheynalogo.png"></a>
         </div>
-    </nav>
-    <!-- <div class="container"> -->
-    <div id="slide" class="row">
-        <div class="col s12 m2 l2">
-        </div>
-        <div class=" col s12 m10 l10 slider">
+        <!-- <div class="container"> -->
+        <div class=" col s12 m12 l10 slider">
             <ul class="slides">
                 <li>
                     <img src="images/cc9.jpg">
